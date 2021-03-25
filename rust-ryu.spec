@@ -5,14 +5,15 @@
 %global crate ryu
 
 Name:           rust-%{crate}
-Version:        1.0.2
-Release:        2%{?dist}
+Version:        1.0.5
+Release:        1
 Summary:        Fast floating point to string conversion
 
 # Upstream license specification: Apache-2.0 OR BSL-1.0
 License:        ASL 2.0 or Boost
 URL:            https://crates.io/crates/ryu
 Source:         %{crates_source}
+Patch0:		ryu-1.0.5-allow-newer-rand.patch
 
 ExclusiveArch:  %{rust_arches}
 %if %{__cargo_skip_build}
@@ -93,52 +94,3 @@ which use "small" feature of "%{crate}" crate.
 %check
 %cargo_test
 %endif
-
-%changelog
-* Thu Jan 30 2020 Fedora Release Engineering <releng@fedoraproject.org> - 1.0.2-2
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
-
-* Tue Nov 19 2019 Josh Stone <jistone@redhat.com> - 1.0.2-1
-- Update to 1.0.2
-
-* Fri Jul 26 2019 Fedora Release Engineering <releng@fedoraproject.org> - 1.0.0-2
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
-
-* Thu Jun 27 07:29:59 CEST 2019 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 1.0.0-1
-- Update to 1.0.0
-
-* Thu Jun 20 12:01:19 CEST 2019 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 0.2.8-4
-- Regenerate
-
-* Sun Jun 09 12:24:37 CEST 2019 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 0.2.8-3
-- Fix skip_build
-
-* Sun Jun 09 11:10:21 CEST 2019 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 0.2.8-2
-- Regenerate
-
-* Thu May 02 08:40:15 CEST 2019 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 0.2.8-1
-- Update to 0.2.8
-
-* Sun Mar 10 2019 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 0.2.7-3
-- Do not pull optional dependencies
-
-* Sat Feb 02 2019 Fedora Release Engineering <releng@fedoraproject.org> - 0.2.7-2
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
-
-* Tue Nov 13 2018 Josh Stone <jistone@redhat.com> - 0.2.7-1
-- Update to 0.2.7
-
-* Sat Oct 27 2018 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 0.2.6-3
-- Adapt to new packaging
-
-* Sun Oct 07 2018 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 0.2.6-2
-- Run tests in infrastructure
-
-* Sat Sep 08 2018 Josh Stone <jistone@redhat.com> - 0.2.6-1
-- Update to 0.2.6
-
-* Sun Aug 19 2018 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 0.2.4-1
-- Update to 0.2.4
-
-* Sat Aug 18 2018 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 0.2.3-1
-- Initial package
