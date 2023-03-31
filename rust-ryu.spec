@@ -6,7 +6,7 @@
 
 Name:           rust-%{crate}
 Version:        1.0.5
-Release:        1
+Release:        2
 Summary:        Fast floating point to string conversion
 
 # Upstream license specification: Apache-2.0 OR BSL-1.0
