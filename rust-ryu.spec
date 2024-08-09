@@ -5,15 +5,14 @@
 %global crate ryu
 
 Name:           rust-%{crate}
-Version:        1.0.5
-Release:        2
+Version:        1.0.18
+Release:        1
 Summary:        Fast floating point to string conversion
 
 # Upstream license specification: Apache-2.0 OR BSL-1.0
 License:        ASL 2.0 or Boost
 URL:            https://crates.io/crates/ryu
 Source:         %{crates_source}
-Patch0:		ryu-1.0.5-allow-newer-rand.patch
 
 ExclusiveArch:  %{rust_arches}
 %if %{__cargo_skip_build}
