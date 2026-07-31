@@ -5,7 +5,7 @@
 %global crate ryu
 
 Name:           rust-%{crate}
-Version:        1.0.18
+Version:        1.0.23
 Release:        1
 Summary:        Fast floating point to string conversion
 
